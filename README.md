@@ -23,5 +23,6 @@ VScode の拡張機能である Dev Containers を利用すると、快適に開
 ```bash
 docker compose up -d
 docker-compose exec vue-app bash
+yarn install
 yarn serve
 ```
