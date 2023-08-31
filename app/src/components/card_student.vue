@@ -36,12 +36,16 @@ export default {
 
 <style scoped>
 .card {
+  flex: 1;
+  min-width: 300px; /* Adjust the padding/margin values */
   border: 1px solid #ccc;
   padding: 16px;
   margin: 16px;
   border-radius: 8px;
   cursor: pointer;
   transition: box-shadow 0.3s;
+  box-sizing: border-box;
+  background-color: #EEEEEF;
 }
 
 .card:hover {
@@ -50,5 +54,13 @@ export default {
 
 img {
   width: 200px;
+  margin: auto;
+  display: block;
+  margin-bottom: 16px;
+}
+
+p {
+  font-weight: bold;
+  font-size: 110%;
 }
 </style>
