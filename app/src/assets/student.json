@@ -1,0 +1,35 @@
+[
+  {
+    "id": 1,
+    "student_name": "田中太郎",
+    "student_sex": "男",
+    "student_place": "東京都　千代田区",
+    "student_year": 2,
+    "student_img": "../assets/car_img/car_black.png",
+    "student_review": 5,
+    "student_comment": "エアコンガンガン効かせましょう！",
+    "student_cost": 1000
+  },
+  {
+    "id": 2,
+    "student_name": "山田花子",
+    "student_sex": "女",
+    "student_place": "東京都　千代田区",
+    "student_year": 3,
+    "student_img": "../assets/car_img/car_blue.png",
+    "student_review": 3,
+    "student_comment": "一緒に練習しましょう！",
+    "student_cost": 2000
+  },
+  {
+    "id": 3,
+    "student_name": "佐藤二郎",
+    "student_sex": "男",
+    "student_place": "東京都　練馬区",
+    "student_year": 1,
+    "student_img": "../assets/car_img/car_gray.png",
+    "student_review": 4,
+    "student_comment": "運転なんて簡単さ．．．",
+    "student_cost": 4000
+  }
+]

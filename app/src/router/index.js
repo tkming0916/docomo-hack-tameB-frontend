@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from "vue-router";
 import HomePage from "../pages/HomePage.vue";
 import StudentRequest from "../pages/StudentRequest.vue";
 import SelectCars from "../pages/SelectCars.vue";
+import Student from "../pages/Student.vue";
 
 const routes = [
   {
@@ -18,6 +19,11 @@ const routes = [
     path: "/selectcars",
     name: "SelectCars",
     component: SelectCars,
+  },
+  {
+    path: "/student",
+    name: "Student",
+    component: Student,
   },
   // 他のルートを追加できます
 ];
