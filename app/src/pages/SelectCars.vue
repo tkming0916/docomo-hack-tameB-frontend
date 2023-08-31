@@ -4,30 +4,136 @@
       <h1 class="text-2xl font-semibold">カーシェア一覧</h1>
     </header>
 
+    <div id="search">
+      <button v-on:click="openModal">検索条件</button>
+
+      <div id="overlay" v-show="showContent">
+        <div id="content">
+          <p>これがモーダルウィンドウです。</p>
+    
+          <!-- 職業の選択-->
+          <div class="search">
+          <div class="occupation">
+            <div class="radio-options">
+              <label class="radio-label">職業:</label>
+              <input type="radio" id="occupation-any" value="" v-model="selectedOccupation" name="occupation"><label for="occupation-any">指定しない</label>
+              <input type="radio" id="occupation-car" value="車関連" v-model="selectedOccupation" name="occupation"><label for="occupation-car">車関連</label>
+            </div>
+          </div>
+
+          <!-- 性別の選択 -->
+      <div class="gender">
+        <div class="radio-gender">
+          <label class="radio-label">性別:</label>
+          <input type="radio" id="gender-any" value="" v-model="selectedGender"><label for="gender-any">指定しない</label>
+          <input type="radio" id="gender-man" value="男性" v-model="selectedGender"><label for="gender-car">男性</label>
+          <input type="radio" id="gender-woman" value="女性" v-model="selectedGender"><label for="gender-car">女性</label>
+        </div>
+      </div>
+      
+      <!-- 年齢の選択 -->
+      <div class="age">
+      <div class="radio-options">
+      <label class="radio-label">年齢:</label>
+        <input type="radio" id="age-any" value="" v-model="selectedAge" name="age">
+        <label for="age-any">指定しない</label>
+        <input type="radio" id="age-20s" value="20-29" v-model="selectedAge" name="age">
+        <label for="age-20s">20~29</label>
+        <input type="radio" id="age-30s" value="30-39" v-model="selectedAge" name="age">
+        <label for="age-30s">30~39</label>
+        <input type="radio" id="age-40s" value="40-49" v-model="selectedAge" name="age">
+        <label for="age-40s">40~49</label>
+        <input type="radio" id="age-50s" value="50-59" v-model="selectedAge" name="age">
+        <label for="age-50s">50~59</label>
+        <input type="radio" id="age-60s" value="60-69" v-model="selectedAge" name="age">
+        <label for="age-60s">60~69</label>
+      </div>
+    </div>
+      
+      <!-- 場所の選択 -->
+      <div class="location">
+        <label>場所:</label>
+        <select v-model="selectedLocation">
+          <option v-for="city in tokyoCities" :key="city" :value="city">{{ city }}</option>
+        </select>
+      </div>
+      <br>
+
+      <!-- 曜日の選択 -->
+      <div class="day">
+        <label>曜日・時間:</label>
+        <select v-model="selectedTime">
+          <option>月</option>
+          <option>火</option>
+          <option>水</option>
+          <option>木</option>
+          <option>金</option>
+          <option>土</option>
+          <option>日</option>
+        </select>
+      </div>
+      
+      <!-- 曜日の選択 -->
+      <label for="starttime"></label>
+        <input
+        type="number"
+        id="MondayStart"
+        v-model="selectedStart"
+        min="0"
+        max="24"
+      />:00〜
+      <label for="endtime"></label>
+      <input
+        type="number"
+        id="MondayEnd"
+        v-model="selectedEnd"
+        min="0"
+        max="24"
+      />:00
+      <br>
+
+      <!-- 運転歴の選択 -->
+      <label for="experience">運転歴:</label>
+      <input
+        type="number"
+        id="experience"
+        v-model="selectedExperience"
+        min="1"
+        max="30"
+      />年以上
+      <br>
+      
+      <!-- 検索ボタン -->
+      <button @click="searchTeachers">検索</button>
+    </div>
+  
+  
+          <button v-on:click="closeModal">閉じる</button>
+        </div>
+      </div>
+    </div>
     <main id="main_content" class="l-mainContent l-article bg-gray-100 p-8">
       <div>
         <Card_car v-for="card in cards" :key="card.id" :cardData="card" @click="navigateToDetail(card)"/>
       </div>
-      
     </main>
   </div>
 </template>
 
 <script>
-import Card_car from '../components/card_car.vue';
-import cardsData from '../assets/cars.json'; // JSONファイルのパスに合わせて調整
-
+import Card_car from "../components/card_car.vue";
+import cardsData from "../assets/cars.json"; // JSONファイルのパスに合わせて調整
 
 export default {
   props: ["id"], // 遷移前のidを受け取る
 
   components: {
-    Card_car
+    Card_car,
   },
   data() {
     return {
       // showCars: false,
-      cards: cardsData
+      cards: cardsData,
     };
   },
   methods: {
@@ -45,7 +151,59 @@ export default {
 };
 </script>
 
+<script setup>
+import { createApp, ref } from "vue";
+
+const showContent = ref(false);
+
+const openModal = () => {
+  console.log("click");
+  showContent.value = true;
+};
+
+const closeModal = () => {
+  showContent.value = false;
+};
+
+const app = createApp({
+  setup() {
+    return {
+      showContent,
+      openModal,
+      closeModal,
+    };
+  },
+});
+
+app.mount("#search"); // HTML上の要素に応じて適切なIDを指定してください
+</script>
+
 <style>
+#overlay {
+  /* 要素を重ねた時の順番 */
+  z-index: 1;
+
+  /* 画面全体を覆う設定 */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+
+  /* 画面の中央に要素を表示させる設定 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#content {
+  z-index: 2;
+  width: 50%;
+  padding: 1em;
+  background: #fff;
+}
+
 /* ... 必要なスタイルをここに追加 ... */
 img {
   width: 200px;
