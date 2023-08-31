@@ -52,8 +52,18 @@
       <!-- 場所の選択 -->
       <div class="location">
         <label>場所:</label>
-        <select v-model="selectedLocation">
-          <option v-for="city in tokyoCities" :key="city" :value="city">{{ city }}</option>
+        <select v-model="selectedLocation" multiple class="bg-gray-100 border border-gray-300">
+          <option >渋谷区</option>
+          <option>千代田区</option>
+          <option>新宿区</option>
+          <option>練馬区</option>
+          <option>目黒区</option>
+          <option>世田谷区</option>
+          <option>足立区</option>
+          <option>台東区</option>
+          <option>葛飾区</option>
+          <option>板橋区</option>
+          
         </select>
       </div>
       <br>
@@ -61,7 +71,7 @@
       <!-- 曜日の選択 -->
       <div class="day">
         <label>曜日・時間:</label>
-        <select v-model="selectedTime"  class="bg-gray-100">
+        <select v-model="selectedTime"  class="bg-gray-100 border border-gray-300">
           <option>月</option>
           <option>火</option>
           <option>水</option>
@@ -80,7 +90,7 @@
         v-model="selectedStart"
         min="0"
         max="24"
-        class="bg-gray-100"
+        class="bg-gray-100 border border-gray-300"
       />:00〜
       <label for="endtime"></label>
       <input
@@ -89,7 +99,7 @@
         v-model="selectedEnd"
         min="0"
         max="24"
-        class="bg-gray-100"
+        class="bg-gray-100 border border-gray-300"
       />:00
       <br>
 
@@ -101,7 +111,7 @@
         v-model="selectedExperience"
         min="1"
         max="30"
-        class="bg-gray-100"
+        class="bg-gray-100 border border-gray-300"
       />年以上
       <br>
       
@@ -110,7 +120,7 @@
     </div>
   
   
-          <button v-on:click="closeModal" class="bg-gray-200 hover:bg-gray-100 text-white rounded px-4 py-2">閉じる</button>
+          <button v-on:click="closeModal" class="bg-gray-300 hover:bg-gray-100 text-white rounded px-4 py-2">閉じる</button>
         </div>
       </div>
     </div>
