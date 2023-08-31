@@ -5,45 +5,61 @@
     </header>
 
     <div id="search">
-      <button v-on:click="openModal">検索条件</button>
+      <button @click="openModal">検索条件</button>
 
       <div id="overlay" v-show="showContent">
         <div id="content">
-    
-      <!-- 車種の選択 -->
-      <div class="search">
-      
-      <div class="selectedCartype">
-          <label class="radio-label">車種:</label>
-          <input type="radio" id="car-any" value="" v-model="selectedCartype" name="selectedCartype"><label for="selectedCartype-any">指定しない</label>
-          <input type="radio" id="small-car" value="軽自動車" v-model="selectedCartype" name="selectedCartype"><label for="selectedCartype-car">軽自動車</label>
-          <input type="radio" id="nomal-car" value="普通車" v-model="selectedCartype" name="selectedCartype"><label for="selectedCartype-car">普通車</label>
-      </div>
-      
-      <div class="cost">
-        <label>料金:</label>
-        <select v-model="selectedCost">
-          <option value="">指定しない</option>
-          <option value="1000">1,000円以下</option>
-          <option value="2000">2,000円以下</option>
-          <option value="3000">3,000円以下</option>
-          <option value="2000">4,000円以下</option>
-          <option value="3000">5,000円以下</option>
-        </select>
-      </div>
+          <!-- 車種の選択 -->
+          <div class="selectedCartype">
+            <label class="radio-label">車種:</label>
+            <input
+              type="radio"
+              id="car-any"
+              value=""
+              v-model="selectedCartype"
+              name="selectedCartype"
+            /><label for="selectedCartype-any">指定しない</label>
+            <input
+              type="radio"
+              id="small-car"
+              value="軽自動車"
+              v-model="selectedCartype"
+              name="selectedCartype"
+            /><label for="selectedCartype-car">軽自動車</label>
+            <input
+              type="radio"
+              id="nomal-car"
+              value="普通車"
+              v-model="selectedCartype"
+              name="selectedCartype"
+            /><label for="selectedCartype-car">普通車</label>
+          </div>
 
-      <!-- 検索ボタン -->
-      <button @click="searchTeachers">検索</button>
-    </div>
-  
-  
-          <button v-on:click="closeModal">閉じる</button>
+          <div class="cost">
+            <label>料金:</label>
+            <select v-model="selectedCost">
+              <option value="">指定しない</option>
+              <option value="1000">1,000円以下</option>
+              <option value="2000">2,000円以下</option>
+              <option value="3000">3,000円以下</option>
+              <option value="2000">4,000円以下</option>
+              <option value="3000">5,000円以下</option>
+            </select>
+          </div>
+          <!-- 検索ボタン -->
+          <button @click="applyChanges">この条件で絞り込む</button>
+          <button @click="closeModal">閉じる</button>
         </div>
       </div>
     </div>
     <main id="main_content" class="l-mainContent l-article bg-gray-100 p-8">
       <div>
-        <Card_car v-for="card in cards" :key="card.id" :cardData="card" @click="navigateToDetail(card)"/>
+        <Card_car
+          v-for="card in cards"
+          :key="card.id"
+          :cardData="card"
+          @click="navigateToDetail(card)"
+        />
       </div>
     </main>
   </div>
@@ -60,10 +76,22 @@ export default {
     Card_car,
   },
   data() {
-    return {
-      // showCars: false,
-      cards: cardsData,
-    };
+    let maxPrice = null;
+    let filtered = cardsData;
+    if (maxPrice !== null) {
+      filtered = filtered.filter((value) => value.car_cost <= maxPrice);
+    }
+
+    let minPrice = null;
+    if (minPrice !== null) {
+      filtered = filtered.filter((value) => value.car_cost >= minPrice);
+    }
+
+    let carSize = null;
+    if (carSize !== null) {
+      filtered = filtered.filter((value) => value.car_size === carSize);
+    }
+    return { cards: filtered };
   },
   methods: {
     navigateToDetail(card) {
@@ -71,17 +99,24 @@ export default {
       let next_id = this.id + "-" + card.id; // 遷移後のidを計算
 
       console.log(next_id);
-      this.$router.push({ name: 'StudentRequest', params: { id: next_id } });
-      
+      this.$router.push({ name: "StudentRequest", params: { id: next_id } });
+
       console.log("クリックされました");
       console.log(card.id);
-    }
-  }
+    },
+  },
 };
 </script>
 
 <script setup>
 import { createApp, ref } from "vue";
+const MyComponent = {
+  setup(props, context) {
+    context.attrs; // Previously this.$attrs
+    context.slots; // Previously this.$slots
+    context.emit; // Previously this.$emit
+  },
+};
 
 const showContent = ref(false);
 
@@ -94,12 +129,21 @@ const closeModal = () => {
   showContent.value = false;
 };
 
+const applyChanges = () => {
+  // 変更を適用
+  console.log("applyChanges");
+  console.log(this);
+  this.carSize = this.selectedCar;
+  showContent.value = false;
+};
+
 const app = createApp({
   setup() {
     return {
       showContent,
       openModal,
       closeModal,
+      applyChanges,
     };
   },
 });
