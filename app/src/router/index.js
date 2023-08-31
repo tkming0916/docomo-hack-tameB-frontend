@@ -4,6 +4,7 @@ import StudentRequest from "../pages/StudentRequest.vue";
 import ChatPage from "../pages/ChatPage.vue";
 import SelectCars from "../pages/SelectCars.vue";
 import HomeStudent from "../pages/HomeStudent.vue";
+import HomeStudentFiltered from "../pages/HomeStudentFiltered.vue";
 import HistoryStudent from "../pages/HistoryStudent.vue";
 
 const routes = [
@@ -11,6 +12,11 @@ const routes = [
     path: "/",
     name: "HomeStudent",
     component: HomeStudent,
+  },
+  {
+    path: "/filtered",
+    name: "HomeStudentFiltered",
+    component: HomeStudentFiltered,
   },
   {
     path: "/request/:id",
