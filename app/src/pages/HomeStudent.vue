@@ -1,11 +1,11 @@
 <template>
   <div id="app">
     <header class="bg-blue-500 text-white p-4">
-      <h1 class="text-2xl font-semibold">生徒ホーム画面</h1>
+      <h1 class="text-2xl font-semibold">指導者選択画面</h1>
     </header>
 
     <div id="search">
-      <button v-on:click="openModal">検索条件</button>
+      <button v-on:click="openModal" class="bg-red-600 hover:bg-red-500 text-white rounded px-4 py-2">検索条件を絞り込む</button>
 
       <div id="overlay" v-show="showContent">
         <div id="content">
@@ -24,9 +24,9 @@
       <div class="gender">
         <div class="radio-gender">
           <label class="radio-label">性別:</label>
-          <input type="radio" id="gender-any" value="" v-model="selectedGender"><label for="gender-any">指定しない</label>
-          <input type="radio" id="gender-man" value="男性" v-model="selectedGender"><label for="gender-car">男性</label>
-          <input type="radio" id="gender-woman" value="女性" v-model="selectedGender"><label for="gender-car">女性</label>
+          <input type="radio" id="gender-any" value="" v-model="selectedGender" name="gender"><label for="gender-any">指定しない</label>
+          <input type="radio" id="gender-man" value="男性" v-model="selectedGender" name="gender"><label for="gender-car">男性</label>
+          <input type="radio" id="gender-woman" value="女性" v-model="selectedGender" name="gender"><label for="gender-car">女性</label>
         </div>
       </div>
       
@@ -61,7 +61,7 @@
       <!-- 曜日の選択 -->
       <div class="day">
         <label>曜日・時間:</label>
-        <select v-model="selectedTime">
+        <select v-model="selectedTime"  class="bg-gray-100">
           <option>月</option>
           <option>火</option>
           <option>水</option>
@@ -80,6 +80,7 @@
         v-model="selectedStart"
         min="0"
         max="24"
+        class="bg-gray-100"
       />:00〜
       <label for="endtime"></label>
       <input
@@ -88,6 +89,7 @@
         v-model="selectedEnd"
         min="0"
         max="24"
+        class="bg-gray-100"
       />:00
       <br>
 
@@ -99,15 +101,16 @@
         v-model="selectedExperience"
         min="1"
         max="30"
+        class="bg-gray-100"
       />年以上
       <br>
       
       <!-- 検索ボタン -->
-      <button @click="searchTeachers">検索</button>
+      <button  @click="searchTeachers" class="bg-red-600 hover:bg-red-500 text-white rounded px-4 py-2">検索</button>
     </div>
   
   
-          <button v-on:click="closeModal">閉じる</button>
+          <button v-on:click="closeModal" class="bg-gray-200 hover:bg-gray-100 text-white rounded px-4 py-2">閉じる</button>
         </div>
       </div>
     </div>
