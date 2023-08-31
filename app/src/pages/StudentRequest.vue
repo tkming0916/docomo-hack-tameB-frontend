@@ -5,9 +5,9 @@
     <Card_student :cardData="selectedCardCorches" />
     <Card_car :cardData="selectedCardCars" />
 
-      <input type="text" v-model="newMessage" placeholder="開始時刻" />
+    <input type="text" v-model="newMessage" placeholder="開始時刻" />
 
-      <input type="text" v-model="newMessage" placeholder="終了時刻" />
+    <input type="text" v-model="newMessage" placeholder="終了時刻" />
 
     <button type="submit" @click="exec">依頼</button>
   </div>
@@ -38,7 +38,7 @@ export default {
   computed: {
     // const words = this.id.split('-'),
     selectedCardCorches() {
-      return this.cards1.find((card) => card.id === 1);
+      return this.cards1.find((card) => card.id === 2);
     },
     selectedCardCars() {
       return this.cards2.find((card) => card.id === 2);
@@ -47,7 +47,7 @@ export default {
   methods: {
     exec() {
       this.$router.push({ name: "ChatPage" });
-    }
+    },
   },
 };
 </script>

@@ -192,14 +192,12 @@
             <br />
 
             <!-- 検索ボタン -->
-            <router-link :to="{ path: '/filtered' }">
-              <button
-                @click="searchTeachers"
-                class="bg-red-600 hover:bg-red-500 text-white rounded px-4 py-2"
-              >
-                この条件で絞り込み
-              </button>
-            </router-link>
+            <button
+              @click="searchTeachers"
+              class="bg-red-600 hover:bg-red-500 text-white rounded px-4 py-2"
+            >
+              検索
+            </button>
           </div>
 
           <button
@@ -234,10 +232,23 @@ export default {
     Card_student,
   },
   data() {
-    return {
-      // showCars: false,
-      cards: cardsData,
-    };
+    let sex = "女";
+    let filtered = cardsData;
+    if (sex !== null) {
+      filtered = filtered.filter((value) => value.person_sex === sex);
+    }
+
+    let maxAge = 30;
+    if (maxAge !== null) {
+      filtered = filtered.filter((value) => value.person_age < maxAge);
+    }
+
+    let minAge = 20;
+    if (minAge !== null) {
+      filtered = filtered.filter((value) => value.person_age >= minAge);
+    }
+
+    return { cards: filtered };
   },
   methods: {
     navigateToCars(card) {
@@ -250,70 +261,6 @@ export default {
 };
 </script>
 
-<script setup>
-import { createApp, ref } from "vue";
-
-const showContent = ref(false);
-
-const openModal = () => {
-  console.log("click");
-  showContent.value = true;
-};
-
-const closeModal = () => {
-  showContent.value = false;
-};
-
-const applyChanges = () => {
-  // 変更を適用
-  console.log("applyChanges");
-  console.log(this);
-  this.carSize = this.selectedCar;
-  showContent.value = false;
-};
-
-const app = createApp({
-  setup() {
-    return {
-      showContent,
-      openModal,
-      closeModal,
-      applyChanges,
-    };
-  },
-});
-
-app.mount("#search"); // HTML上の要素に応じて適切なIDを指定してください
-</script>
-
 <style>
-#overlay {
-  /* 要素を重ねた時の順番 */
-  z-index: 1;
-
-  /* 画面全体を覆う設定 */
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-
-  /* 画面の中央に要素を表示させる設定 */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-#content {
-  z-index: 2;
-  width: 50%;
-  padding: 1em;
-  background: #fff;
-}
-
 /* ... 必要なスタイルをここに追加 ... */
-img {
-  width: 200px;
-}
 </style>
