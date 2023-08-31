@@ -4,20 +4,23 @@
     "car_name": "トヨタ　アクア",
     "car_size": "普通車",
     "car_place": "東京都　千代田区",
-    "car_cost": 2000
+    "car_cost": 2000,
+    "car_img": "car_img/car_black.png"
   },
   {
     "id": 2,
     "car_name": "トヨタ　プリウス",
     "car_size": "普通車",
     "car_place": "東京都　千代田区",
-    "car_cost": 3000
+    "car_cost": 3000,
+    "car_img": "car_img/car_blue.png"
   },
   {
     "id": 3,
     "car_name": "スズキ　ワゴンＲ",
     "car_size": "軽自動車",
     "car_place": "東京都　練馬区",
-    "car_cost": 1500
+    "car_cost": 1500,
+    "car_img": "car_img/car_gray.png"
   }
 ]

@@ -1,11 +1,14 @@
 <template>
   <div class="card" @click="goToDetails">
     <!-- カードの表示内容 -->
-    <a>{{ cardData.id }}</a>
+    <!-- <a>{{ cardData.id }}</a> -->
+    <img :src="require(`@/assets/${cardData.car_img}`)">
     <p>車種：{{ cardData.car_name }}</p>
     <p>利用料：{{ cardData.car_cost }}</p>
     <p>大きさ：{{ cardData.car_size }}</p>
     <p>場所：{{ cardData.car_place }}</p>
+
+    <!-- <p>{{ cardData }}</p> -->
   </div>
 </template>
 
