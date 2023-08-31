@@ -15,7 +15,11 @@
     "person_talk": "多い",
     "person_method": "直感的",
     "person_comment": "車の整備士として10年以上の経験があります。",
-    "person_img": "model-img/model_1.png"
+    "person_img": "model-img/model_1.png",
+    "person_eval_treat": "話をよく聞く",
+    "person_eval_talk": "速い",
+    "person_eval_teach": "優しい",
+    "person_eval_atmosphere": "明るい"
   },
   {
     "id": 2,
@@ -33,7 +37,11 @@
     "person_talk": "少ない",
     "person_method": "理論的",
     "person_comment": "車の整備士として5年以上の経験があります。",
-    "person_img": "model-img/model_2.png"
+    "person_img": "model-img/model_2.png",
+    "person_eval_treat": "リードしてくれる",
+    "person_eval_talk": "ゆっくり",
+    "person_eval_teach": "優しい",
+    "person_eval_atmosphere": "明るい"
   },
   {
     "id": 3,
@@ -51,7 +59,11 @@
     "person_talk": "多い",
     "person_method": "直感的",
     "person_comment": "車の整備士として20年以上の経験があります。",
-    "person_img": "model-img/model_3.png"
+    "person_img": "model-img/model_3.png",
+    "person_eval_treat": "話をよく聞く",
+    "person_eval_talk": "速い",
+    "person_eval_teach": "みっちり鍛える",
+    "person_eval_atmosphere": "落ち着いている"
   },
   {
     "id": 4,
@@ -69,7 +81,11 @@
     "person_talk": "多い",
     "person_method": "直感的",
     "person_comment": "がんばろう！！",
-    "person_img": "model-img/model_4.png"
+    "person_img": "model-img/model_4.png",
+    "person_eval_treat": "リードしてくれる",
+    "person_eval_talk": "ゆっくり",
+    "person_eval_teach": "優しい",
+    "person_eval_atmosphere": "明るい"
   },
   {
     "id": 5,
@@ -87,7 +103,11 @@
     "person_talk": "多い",
     "person_method": "直感的",
     "person_comment": "がんばろう！！",
-    "person_img": "model-img/model_5.png"
+    "person_img": "model-img/model_5.png",
+    "person_eval_treat": "話をよく聞く",
+    "person_eval_talk": "ゆっくり",
+    "person_eval_teach": "優しい",
+    "person_eval_atmosphere": "明るい"
   },
   {
     "id": 6,
@@ -105,7 +125,11 @@
     "person_talk": "少ない",
     "person_method": "理論的",
     "person_comment": "がんばろう！！",
-    "person_img": "model-img/model_6.png"
+    "person_img": "model-img/model_6.png",
+    "person_eval_treat": "話をよく聞く",
+    "person_eval_talk": "速い",
+    "person_eval_teach": "みっちり鍛える",
+    "person_eval_atmosphere": "落ち着いている"
   },
   {
     "id": 7,
@@ -123,7 +147,11 @@
     "person_talk": "多い",
     "person_method": "直感的",
     "person_comment": "がんばろう！！",
-    "person_img": "model-img/model_7.png"
+    "person_img": "model-img/model_7.png",
+    "person_eval_treat": "リードしてくれる",
+    "person_eval_talk": "速い",
+    "person_eval_teach": "優しい",
+    "person_eval_atmosphere": "明るい"
   },
   {
     "id": 8,
@@ -141,7 +169,11 @@
     "person_talk": "多い",
     "person_method": "直感的",
     "person_comment": "がんばろう！！",
-    "person_img": "model-img/model_8.png"
+    "person_img": "model-img/model_8.png",
+    "person_eval_treat": "話をよく聞く",
+    "person_eval_talk": "速い",
+    "person_eval_teach": "優しい",
+    "person_eval_atmosphere": "明るい"
   },
   {
     "id": 9,
@@ -159,7 +191,11 @@
     "person_talk": "少ない",
     "person_method": "理論的",
     "person_comment": "がんばろう！！",
-    "person_img": "model-img/model_9.png"
+    "person_img": "model-img/model_9.png",
+    "person_eval_treat": "話をよく聞く",
+    "person_eval_talk": "速い",
+    "person_eval_teach": "優しい",
+    "person_eval_atmosphere": "明るい"
   },
   {
     "id": 10,
@@ -177,7 +213,11 @@
     "person_talk": "多い",
     "person_method": "直感的",
     "person_comment": "がんばろう！！",
-    "person_img": "model-img/model_10.png"
+    "person_img": "model-img/model_10.png",
+    "person_eval_treat": "話をよく聞く",
+    "person_eval_talk": "速い",
+    "person_eval_teach": "優しい",
+    "person_eval_atmosphere": "明るい"
   },
   {
     "id": 11,
@@ -195,7 +235,11 @@
     "person_talk": "多い",
     "person_method": "直感的",
     "person_comment": "がんばろう！！",
-    "person_img": "model-img/model_11.png"
+    "person_img": "model-img/model_11.png",
+    "person_eval_treat": "話をよく聞く",
+    "person_eval_talk": "速い",
+    "person_eval_teach": "優しい",
+    "person_eval_atmosphere": "明るい"
   },
   {
     "id": 12,
@@ -213,7 +257,11 @@
     "person_talk": "多い",
     "person_method": "直感的",
     "person_comment": "がんばろう！！",
-    "person_img": "model-img/model_12.png"
+    "person_img": "model-img/model_12.png",
+    "person_eval_treat": "話をよく聞く",
+    "person_eval_talk": "速い",
+    "person_eval_teach": "優しい",
+    "person_eval_atmosphere": "明るい"
   },
   {
     "id": 13,
@@ -231,7 +279,11 @@
     "person_talk": "多い",
     "person_method": "直感的",
     "person_comment": "がんばろう！！",
-    "person_img": "model-img/model_13.png"
+    "person_img": "model-img/model_13.png",
+    "person_eval_treat": "話をよく聞く",
+    "person_eval_talk": "速い",
+    "person_eval_teach": "優しい",
+    "person_eval_atmosphere": "明るい"
   },
   {
     "id": 14,
@@ -249,6 +301,10 @@
     "person_talk": "少ない",
     "person_method": "理論的",
     "person_comment": "がんばろう！！",
-    "person_img": "model-img/model_14.png"
+    "person_img": "model-img/model_14.png",
+    "person_eval_treat": "話をよく聞く",
+    "person_eval_talk": "速い",
+    "person_eval_teach": "優しい",
+    "person_eval_atmosphere": "明るい"
   }
 ]

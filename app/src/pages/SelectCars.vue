@@ -42,7 +42,7 @@
       </div>
     </div>
     <main id="main_content" class="l-mainContent l-article bg-gray-100 p-8">
-      <div>
+      <div class="card-container">
         <Card_car v-for="card in cards" :key="card.id" :cardData="card" @click="navigateToDetail(card)"/>
       </div>
     </main>
@@ -134,7 +134,12 @@ app.mount("#search"); // HTML上の要素に応じて適切なIDを指定して�
 }
 
 /* ... 必要なスタイルをここに追加 ... */
-img {
-  width: 200px;
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 800px; /* Adjust the max-width as needed */
+  margin: 0 auto;
+  padding: 16px;
 }
 </style>

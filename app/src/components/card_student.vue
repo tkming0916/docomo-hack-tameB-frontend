@@ -10,8 +10,14 @@
     
     <p>指導歴：{{ cardData.person_experience }}</p>
     <p>料金：{{ cardData.person_cost }}</p>
-    <p>評価：{{ cardData.person_evaluation }}</p>
     <p>コメント：{{ cardData.person_comment }}</p>
+    
+    <p>===========</p>
+    <p>評価：{{ cardData.person_evaluation }}</p>
+    <p>接し方：{{ cardData.person_eval_treat }}</p>
+    <p>話し方：{{ cardData.person_eval_talk }}</p>
+    <p>指導の仕方：{{ cardData.person_eval_teach }}</p>
+    <p>雰囲気：{{ cardData.person_eval_atmosphere }}</p>
 
     <!-- <p>{{ cardData }}</p> -->
   </div>
@@ -30,12 +36,16 @@ export default {
 
 <style scoped>
 .card {
+  flex: 1;
+  min-width: 300px; /* Adjust the padding/margin values */
   border: 1px solid #ccc;
   padding: 16px;
   margin: 16px;
   border-radius: 8px;
   cursor: pointer;
   transition: box-shadow 0.3s;
+  box-sizing: border-box;
+  background-color: #EEEEEF;
 }
 
 .card:hover {
@@ -44,8 +54,13 @@ export default {
 
 img {
   width: 200px;
+  margin: auto;
+  display: block;
+  margin-bottom: 16px;
 }
-p{
-  font-size: 20px;
+
+p {
+  font-weight: bold;
+  font-size: 110%;
 }
 </style>

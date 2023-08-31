@@ -2,14 +2,26 @@
   <div>
     <h1>予約決定画面</h1>
 
-    <Card_student :cardData="selectedCardCorches" />
-    <Card_car :cardData="selectedCardCars" />
+    <div class="card-container">
+      <div class="card">
+        <Card_student :cardData="selectedCardCorches" />
+      </div>
+      <div class="card">
+        <Card_car :cardData="selectedCardCars" />
+      </div>
+    </div>
 
-    <input type="text" v-model="newMessage" placeholder="開始時刻" />
+    <a>
+      <input type="text" v-model="newMessage" placeholder="開始時刻" />
+      から
+      <input type="text" v-model="newMessage" placeholder="終了時刻" />
+      まで
+    </a>
 
-    <input type="text" v-model="newMessage" placeholder="終了時刻" />
+    <p class="button">
+      <button type="submit" class="mt-2 px-12 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600" @click="exec">依頼する</button>
+    </p>
 
-    <button type="submit" @click="exec">依頼</button>
   </div>
 </template>
 
@@ -61,4 +73,11 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
+
+.card {
+  justify-content: space-between;
+  min-width: 600px; /* Adjust the max-width as needed */
+  margin: 0 auto;
+}
+
 </style>
