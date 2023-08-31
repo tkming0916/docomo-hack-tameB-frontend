@@ -114,7 +114,7 @@
     </div>
     <main id="main_content" class="l-mainContent l-article bg-gray-100 p-8">
       <div>
-        <Card_car v-for="card in cards" :key="card.id" :cardData="card" />
+        <Card_car v-for="card in cards" :key="card.id" :cardData="card" @click="navigateToDetail(card)"/>
       </div>
     </main>
   </div>
@@ -125,6 +125,8 @@ import Card_car from "../components/card_car.vue";
 import cardsData from "../assets/cars.json"; // JSONファイルのパスに合わせて調整
 
 export default {
+  props: ["id"], // 遷移前のidを受け取る
+
   components: {
     Card_car,
   },
@@ -135,13 +137,17 @@ export default {
     };
   },
   methods: {
-    buttonClicked() {
-      window.alert("クリックしましたね");
-    },
-    showDetails(car) {
-      this.selectedCar = car === this.selectedCar ? null : car;
-    },
-  },
+    navigateToDetail(card) {
+      console.log("Received cardData prop:", this.id);
+      let next_id = this.id + "-" + card.id; // 遷移後のidを計算
+
+      console.log(next_id);
+      this.$router.push({ name: 'StudentRequest', params: { id: next_id } });
+      
+      console.log("クリックされました");
+      console.log(card.id);
+    }
+  }
 };
 </script>
 

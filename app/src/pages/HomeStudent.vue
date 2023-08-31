@@ -114,7 +114,7 @@
 
     <main id="main_content" class="l-mainContent l-article bg-gray-100 p-8">
       <div>
-        <Card_student v-for="card in cards" :key="card.id" :cardData="card" />
+        <Card_student v-for="card in cards" :key="card.id" :cardData="card" @click="navigateToCars(card)"/>
       </div>
       
     </main>
@@ -137,12 +137,12 @@ export default {
     };
   },
   methods: {
-  //   buttonClicked(){
-  //     window.alert('クリックしましたね')
-  //   },
-  //   showDetails(car) {
-  //     this.selectedCar = car === this.selectedCar ? null : car;
-  //   }
+    navigateToCars(card) {
+      // this.selectedCard = card; // カードを選択して詳細情報を表示
+      this.$router.push({ name: 'SelectCars', params: { id: card.id } });
+      console.log("クリックされました");
+      console.log(card.id);
+    }
   }
 };
 </script>

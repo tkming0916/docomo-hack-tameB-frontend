@@ -16,9 +16,9 @@
 export default {
   props: ['cardData'],
   methods: {
-    goToDetails() {
-      this.$router.push({ name: 'DetailsPage', params: { id: this.cardData.id } });
-    }
+    // goToDetails() {
+    //   this.$router.push({ name: 'DetailsPage', params: { id: this.cardData.id } });
+    // }
   }
 };
 </script>
