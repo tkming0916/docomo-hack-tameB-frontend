@@ -10,8 +10,14 @@
     
     <p>指導歴：{{ cardData.person_experience }}</p>
     <p>料金：{{ cardData.person_cost }}</p>
-    <p>評価：{{ cardData.person_evaluation }}</p>
     <p>コメント：{{ cardData.person_comment }}</p>
+    
+    <p>===========</p>
+    <p>評価：{{ cardData.person_evaluation }}</p>
+    <p>接し方：{{ cardData.person_eval_treat }}</p>
+    <p>話し方：{{ cardData.person_eval_talk }}</p>
+    <p>指導の仕方：{{ cardData.person_eval_teach }}</p>
+    <p>雰囲気：{{ cardData.person_eval_atmosphere }}</p>
 
     <!-- <p>{{ cardData }}</p> -->
   </div>
@@ -44,8 +50,5 @@ export default {
 
 img {
   width: 200px;
-}
-p{
-  font-size: 20px;
 }
 </style>
