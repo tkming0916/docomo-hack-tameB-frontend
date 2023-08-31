@@ -1,5 +1,6 @@
 [
   {
+    "id": 1,
     "student_name": "田中太郎",
     "student_sex": "男",
     "student_place": "東京都　千代田区",
@@ -10,6 +11,7 @@
     "student_cost": 1000
   },
   {
+    "id": 2,
     "student_name": "山田花子",
     "student_sex": "女",
     "student_place": "東京都　千代田区",
@@ -20,6 +22,7 @@
     "student_cost": 2000
   },
   {
+    "id": 3,
     "student_name": "佐藤二郎",
     "student_sex": "男",
     "student_place": "東京都　練馬区",
@@ -30,6 +33,7 @@
     "student_cost": 4000
   },
   {
+    "id": 4,
     "student_name": "田中太郎",
     "student_sex": "男",
     "student_place": "東京都　千代田区",
@@ -40,6 +44,7 @@
     "student_cost": 1000
   },
   {
+    "id": 5,
     "student_name": "山田花子",
     "student_sex": "女",
     "student_place": "東京都　千代田区",
@@ -50,6 +55,7 @@
     "student_cost": 2000
   },
   {
+    "id": 6,
     "student_name": "佐藤二郎",
     "student_sex": "男",
     "student_place": "東京都　練馬区",
