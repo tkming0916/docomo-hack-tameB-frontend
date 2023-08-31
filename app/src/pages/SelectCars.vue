@@ -29,16 +29,19 @@ export default {
     };
   },
   methods: {
-    buttonClicked(){
-      window.alert('クリックしましたね')
-    },
-    showDetails(car) {
-      this.selectedCar = car === this.selectedCar ? null : car;
-    }
+    // buttonClicked(){
+    //   window.alert('クリックしましたね')
+    // },
+    // showDetails(car) {
+    //   this.selectedCar = car === this.selectedCar ? null : car;
+    // }
   }
 };
 </script>
 
 <style>
 /* ... 必要なスタイルをここに追加 ... */
+img {
+  width: 200px;
+}
 </style>

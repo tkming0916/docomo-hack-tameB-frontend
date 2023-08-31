@@ -4,7 +4,7 @@
     "student_sex": "男",
     "student_place": "東京都　千代田区",
     "student_year": 2,
-    "student_img": "student_img/gal_o_man.png",
+    "student_img": "model-img/model_1.png",
     "student_review": 5,
     "student_comment": "エアコンガンガン効かせましょう！",
     "student_cost": 1000
@@ -14,7 +14,7 @@
     "student_sex": "女",
     "student_place": "東京都　千代田区",
     "student_year": 3,
-    "student_img": "student_img/otaku_girl_fashion.png",
+    "student_img": "model-img/model_2.png",
     "student_review": 3,
     "student_comment": "一緒に練習しましょう！",
     "student_cost": 2000
@@ -24,7 +24,7 @@
     "student_sex": "男",
     "student_place": "東京都　練馬区",
     "student_year": 1,
-    "student_img": "student_img/himan_pocchari05_man.png",
+    "student_img": "model-img/model_3.png",
     "student_review": 4,
     "student_comment": "運転なんて簡単さ．．．",
     "student_cost": 4000
@@ -34,7 +34,7 @@
     "student_sex": "男",
     "student_place": "東京都　千代田区",
     "student_year": 2,
-    "student_img": "student_img/gal_o_man.png",
+    "student_img": "model-img/model_4.png",
     "student_review": 5,
     "student_comment": "エアコンガンガン効かせましょう！",
     "student_cost": 1000
@@ -44,7 +44,7 @@
     "student_sex": "女",
     "student_place": "東京都　千代田区",
     "student_year": 3,
-    "student_img": "student_img/otaku_girl_fashion.png",
+    "student_img": "model-img/model_5.png",
     "student_review": 3,
     "student_comment": "一緒に練習しましょう！",
     "student_cost": 2000
@@ -54,7 +54,7 @@
     "student_sex": "男",
     "student_place": "東京都　練馬区",
     "student_year": 1,
-    "student_img": "student_img/himan_pocchari05_man.png",
+    "student_img": "model-img/model_6.png",
     "student_review": 4,
     "student_comment": "運転なんて簡単さ．．．",
     "student_cost": 4000

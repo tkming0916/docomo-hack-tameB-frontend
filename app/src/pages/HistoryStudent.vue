@@ -6,7 +6,7 @@
 
     <main id="main_content" class="l-mainContent l-article bg-gray-100 p-8">
       <div>
-        <Card_student v-for="card in cards" :key="card.id" :cardData="card" />
+        <Card_history v-for="card in cards" :key="card.id" :cardData="card" />
       </div>
       
     </main>
@@ -14,13 +14,13 @@
 </template>
 
 <script>
-import Card_student from '../components/card_student.vue';
-import cardsData from '../assets/student.json'; // JSONファイルのパスに合わせて調整
+import Card_history from '../components/card_history.vue';
+import cardsData from '../assets/history.json'; // JSONファイルのパスに合わせて調整
 
 
 export default {
   components: {
-    Card_student
+    Card_history
   },
   data() {
     return {
@@ -29,12 +29,12 @@ export default {
     };
   },
   methods: {
-    buttonClicked(){
-      window.alert('クリックしましたね')
-    },
-    showDetails(car) {
-      this.selectedCar = car === this.selectedCar ? null : car;
-    }
+  //   buttonClicked(){
+  //     window.alert('クリックしましたね')
+  //   },
+  //   showDetails(car) {
+  //     this.selectedCar = car === this.selectedCar ? null : car;
+  //   }
   }
 };
 </script>
