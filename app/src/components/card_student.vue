@@ -43,4 +43,7 @@ export default {
 img {
   width: 200px;
 }
+p{
+  font-size: 20px;
+}
 </style>

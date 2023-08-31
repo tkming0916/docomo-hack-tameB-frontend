@@ -36,4 +36,7 @@ export default {
 .card:hover {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+p{
+  font-size: 30px;
+}
 </style>

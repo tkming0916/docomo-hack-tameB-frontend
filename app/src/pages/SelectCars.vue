@@ -5,7 +5,7 @@
     </header>
 
     <div id="search">
-      <button v-on:click="openModal">検索条件</button>
+      <button v-on:click="openModal" class="bg-red-600 hover:bg-red-500 text-white rounded px-4 py-2">検索条件を絞り込む</button>
 
       <div id="overlay" v-show="showContent">
         <div id="content">
@@ -22,7 +22,7 @@
       
       <div class="cost">
         <label>料金:</label>
-        <select v-model="selectedCost">
+        <select v-model="selectedCost" class="bg-gray-100 border border-gray-300">
           <option value="">指定しない</option>
           <option value="1000">1,000円以下</option>
           <option value="2000">2,000円以下</option>
@@ -33,11 +33,11 @@
       </div>
 
       <!-- 検索ボタン -->
-      <button @click="searchTeachers">検索</button>
+      <button @click="searchTeachers" class="bg-red-600 hover:bg-red-500 text-white rounded px-4 py-2">検索</button>
     </div>
   
   
-          <button v-on:click="closeModal">閉じる</button>
+          <button v-on:click="closeModal" class="bg-gray-300 hover:bg-gray-100 text-white rounded px-4 py-2">閉じる</button>
         </div>
       </div>
     </div>
