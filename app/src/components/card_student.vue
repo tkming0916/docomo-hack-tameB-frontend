@@ -2,14 +2,16 @@
   <div class="card" @click="goToDetails">
     <!-- カードの表示内容 -->
     <!-- <a>{{ cardData.id }}</a> -->
-    <img :src="require(`@/assets/${cardData.student_img}`)">
-    <p>名前：{{ cardData.student_name }}</p>
-    <p>性別：{{ cardData.student_sex }}</p>
-    <p>場所：{{ cardData.student_place }}</p>
-    <p>指導歴：{{ cardData.student_year }}</p>
-    <p>料金：{{ cardData.student_cost }}</p>
-    <p>評価：{{ cardData.student_review }}</p>
-    <p>コメント：{{ cardData.student_comment }}</p>
+    <img :src="require(`@/assets/${cardData.person_img}`)">
+    <p>名前：{{ cardData.person_name }}</p>
+    <p>性別：{{ cardData.person_sex }}</p>
+    <p>年齢：{{ cardData.person_age }}</p>
+    <p>場所：{{ cardData.person_prefecture }} {{ cardData.person_city }}</p>
+    
+    <p>指導歴：{{ cardData.person_experience }}</p>
+    <p>料金：{{ cardData.person_cost }}</p>
+    <p>評価：{{ cardData.person_evaluation }}</p>
+    <p>コメント：{{ cardData.person_comment }}</p>
 
     <!-- <p>{{ cardData }}</p> -->
   </div>
