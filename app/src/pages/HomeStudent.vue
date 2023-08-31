@@ -126,7 +126,7 @@
 
 <script>
 import Card_student from '../components/card_student.vue';
-import cardsData from '../assets/student.json'; // JSONファイルのパスに合わせて調整
+import cardsData from '../assets/corches.json'; // JSONファイルのパスに合わせて調整
 
 
 export default {
@@ -148,33 +148,6 @@ export default {
     }
   }
 };
-</script>
-
-<script setup>
-import { createApp, ref } from "vue";
-
-const showContent = ref(false);
-
-const openModal = () => {
-  console.log("click");
-  showContent.value = true;
-};
-
-const closeModal = () => {
-  showContent.value = false;
-};
-
-const app = createApp({
-  setup() {
-    return {
-      showContent,
-      openModal,
-      closeModal,
-    };
-  },
-});
-
-app.mount("#search"); // HTML上の要素に応じて適切なIDを指定してください
 </script>
 
 <style>
