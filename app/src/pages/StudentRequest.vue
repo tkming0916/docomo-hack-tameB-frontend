@@ -1,22 +1,23 @@
 <template>
   <div>
-
     <h1>予約決定画面</h1>
-  
-    <Card_student :cardData="selectedCardCorches"/>
-    <Card_car :cardData="selectedCardCars"/>
-  
-    <button type="submit" @click="exec">依頼</button>
 
+    <Card_student :cardData="selectedCardCorches" />
+    <Card_car :cardData="selectedCardCars" />
+
+      <input type="text" v-model="newMessage" placeholder="開始時刻" />
+
+      <input type="text" v-model="newMessage" placeholder="終了時刻" />
+
+    <button type="submit" @click="exec">依頼</button>
   </div>
 </template>
 
-
 <script>
-import Card_car from '../components/card_car.vue';
-import Card_student from '../components/card_student.vue';
-import cardsData_car from '../assets/cars.json';
-import cardsData_student from '../assets/corches.json';
+import Card_car from "../components/card_car.vue";
+import Card_student from "../components/card_student.vue";
+import cardsData_car from "../assets/cars.json";
+import cardsData_student from "../assets/corches.json";
 
 export default {
   props: ["id"], // 遷移前のidを受け取る
@@ -24,7 +25,7 @@ export default {
 
   components: {
     Card_student,
-    Card_car
+    Card_car,
   },
   data() {
     // const words = this.id.split('-');
@@ -37,17 +38,18 @@ export default {
   computed: {
     // const words = this.id.split('-'),
     selectedCardCorches() {
-      return this.cards1.find(card => card.id === 1);
+      return this.cards1.find((card) => card.id === 1);
     },
     selectedCardCars() {
-      return this.cards2.find(card => card.id === 2);
+      return this.cards2.find((card) => card.id === 2);
+    },
+  },
+  methods: {
+    exec() {
+      this.$router.push({ name: "ChatPage" });
     }
   },
-
-
-
 };
-
 </script>
 
 <style>
