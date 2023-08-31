@@ -3,6 +3,8 @@ import HomePage from "../pages/HomePage.vue";
 import StudentRequest from "../pages/StudentRequest.vue";
 import ChatPage from "../pages/ChatPage.vue";
 import SelectCars from "../pages/SelectCars.vue";
+import HomeStudent from "../pages/HomeStudent.vue";
+import HistoryStudent from "../pages/HistoryStudent.vue";
 
 const routes = [
   {
@@ -24,6 +26,16 @@ const routes = [
     path: "/selectcars",
     name: "SelectCars",
     component: SelectCars,
+  },
+  {
+    path: "/student",
+    name: "HomeStudent",
+    component: HomeStudent,
+  },
+  {
+    path: "/history",
+    name: "HistoryStudent",
+    component: HistoryStudent,
   },
   // 他のルートを追加できます
 ];

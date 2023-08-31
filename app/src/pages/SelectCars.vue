@@ -197,4 +197,9 @@ app.mount("#search"); // HTML上の要素に応じて適切なIDを指定して�
   padding: 1em;
   background: #fff;
 }
+
+/* ... 必要なスタイルをここに追加 ... */
+img {
+  width: 200px;
+}
 </style>
