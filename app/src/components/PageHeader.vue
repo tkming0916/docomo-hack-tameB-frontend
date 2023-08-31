@@ -7,8 +7,8 @@
 
 <script>
 export default {
-  name: 'Header'
-}
+  name: "PageHeader",
+};
 </script>
 
 <style scoped>
