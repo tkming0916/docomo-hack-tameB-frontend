@@ -56,21 +56,13 @@
               </select>
             </div>
 
-            <!-- <input v-model="search" placeholder="Search for a user"> -->
-
             <!-- 検索ボタン -->
             <button
-              @click="searchCars"
-              class="bg-red-600 hover:bg-red-500 text-white rounded px-4 py-2"
-            >
-              この条件で絞り込み
-            </button>
-            <!-- <button
               @click="searchTeachers"
               class="bg-red-600 hover:bg-red-500 text-white rounded px-4 py-2"
             >
               検索
-            </button> -->
+            </button>
           </div>
 
           <button
@@ -85,7 +77,7 @@
     <main id="main_content" class="l-mainContent l-article bg-gray-100 p-8">
       <div class="card-container">
         <Card_car
-          v-for="card in filterCards"
+          v-for="card in cards"
           :key="card.id"
           :cardData="card"
           @click="navigateToDetail(card)"
@@ -106,28 +98,23 @@ export default {
     Card_car,
   },
   data() {
-    // let maxPrice = null;
-    // let filtered = cardsData;
-    // if (maxPrice !== null) {
-    //   filtered = filtered.filter((value) => value.car_cost <= maxPrice);
-    // }
+    let maxPrice = null;
+    let filtered = cardsData;
+    if (maxPrice !== null) {
+      filtered = filtered.filter((value) => value.car_cost <= maxPrice);
+    }
 
-    // let minPrice = null;
-    // if (minPrice !== null) {
-    //   filtered = filtered.filter((value) => value.car_cost >= minPrice);
-    // }
+    let minPrice = null;
+    if (minPrice !== null) {
+      filtered = filtered.filter((value) => value.car_cost >= minPrice);
+    }
 
-    // let carSize = null;
-    // if (carSize !== null) {
-    //   filtered = filtered.filter((value) => value.car_size === carSize);
-    // }
-    return { cards: cardsData, searchPrams: null };
+    let carSize = "軽自動車";
+    if (carSize !== null) {
+      filtered = filtered.filter((value) => value.car_size === carSize);
+    }
+    return { cards: filtered };
   },
-
-  // setup(){
-  //   const selectedCost = ref("");
-  // },
-
   methods: {
     navigateToDetail(card) {
       console.log("Received cardData prop:", this.id);
@@ -139,25 +126,6 @@ export default {
       console.log("クリックされました");
       console.log(card.id);
     },
-    searchCars(card) {
-      console.log("Received cardData prop:", this.id);
-
-      console.log(this.id);
-      this.$router.push({
-        name: "SelectCarsFiltered",
-        params: { id: this.id },
-      });
-
-      console.log("クリックされました");
-      console.log(card.id);
-    },
-  },
-  computed: {
-    filterCards() {
-      // this.searchPrams;
-      // cardsData.filter(function (card) {});
-      return cardsData;
-    },
   },
 };
 </script>
@@ -167,10 +135,8 @@ import { createApp, ref } from "vue";
 
 const showContent = ref(false);
 
-// let selectedCar = ref("");
 const openModal = () => {
   console.log("click");
-  // selectedCar = "普通車";
   showContent.value = true;
 };
 
