@@ -25,18 +25,31 @@ export default {
 
 <style scoped>
 .card {
+  flex: 1;
+  min-width: 300px; /* Adjust the padding/margin values */
   border: 1px solid #ccc;
   padding: 16px;
   margin: 16px;
   border-radius: 8px;
   cursor: pointer;
   transition: box-shadow 0.3s;
+  box-sizing: border-box;
+  background-color: #EEEEEF;
 }
 
 .card:hover {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+
+img {
+  width: 200px;
+  margin: auto;
+  display: block;
+  margin-bottom: 16px;
+}
+
 p{
-  font-size: 30px;
+  font-weight: bold;
+  font-size: 110%;
 }
 </style>
