@@ -19,9 +19,8 @@
     </a>
 
     <p class="button">
-      <button type="submit" class="mt-2 px-12 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600" @click="exec">依頼する</button>
+      <button type="submit" class="mt-2 px-12 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600" @click="navigateToChat">依頼する</button>
     </p>
-
   </div>
 </template>
 
@@ -50,14 +49,21 @@ export default {
   computed: {
     // const words = this.id.split('-'),
     selectedCardCorches() {
-      return this.cards1.find((card) => card.id === 2);
+      const words = this.id.split("-");
+      const coachId = words[0];
+      console.log("coachId: ", coachId);
+      return this.cards1.find((card) => card.id === Number(coachId));
     },
     selectedCardCars() {
-      return this.cards2.find((card) => card.id === 2);
+      const words = this.id.split("-");
+      const carId = words[1];
+      console.log("carId: ", carId);
+      return this.cards2.find((card) => card.id === Number(carId));
     },
   },
   methods: {
-    exec() {
+    navigateToChat() {
+      console.log("Received coachData and cardData prop:", this.id);
       this.$router.push({ name: "ChatPage" });
     },
   },
