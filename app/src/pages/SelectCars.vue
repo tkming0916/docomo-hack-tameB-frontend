@@ -117,6 +117,7 @@ export default {
     return {
       cards: cardsData,
       selectedCarType: "",
+      selectedCost: "",
     };
   },
 
@@ -153,8 +154,17 @@ export default {
       console.log(this.selectedCarType);
       const carType = this.selectedCarType;
       if (carType !== "") {
-        filtered = cardsData.filter(function (card) {
+        filtered = filtered.filter(function (card) {
           return card.car_size === carType;
+        });
+      }
+
+      console.log(typeof this.selectedCost);
+      console.log(this.selectedCost);
+      const maxCost = this.selectedCost;
+      if (maxCost !== "") {
+        filtered = filtered.filter(function (card) {
+          return card.car_cost <= Number(maxCost);
         });
       }
 
