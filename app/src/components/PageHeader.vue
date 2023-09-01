@@ -1,7 +1,7 @@
 <template>
   <div class="bg-gray-800 text-white p-4">
-    <h1 class="text-2xl font-bold">共通ヘッダー</h1>
     <!-- ここに共通のヘッダー要素を配置 -->
+    <img alt="logo" class="" src="../assets/logo_img/logo4-img.png" />
   </div>
 </template>
 
