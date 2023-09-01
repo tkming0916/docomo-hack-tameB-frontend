@@ -50,14 +50,14 @@
                 <input
                   type="radio"
                   id="gender-man"
-                  value="男性"
+                  value="男"
                   v-model="selectedGender"
                   name="gender"
                 /><label for="gender-car">男性</label>
                 <input
                   type="radio"
                   id="gender-woman"
-                  value="女性"
+                  value="女"
                   v-model="selectedGender"
                   name="gender"
                 /><label for="gender-car">女性</label>
@@ -190,21 +190,11 @@
               class="bg-gray-100 border border-gray-300"
             />年以上
             <br />
-
-            <!-- 検索ボタン -->
-            <router-link :to="{ path: '/filtered' }">
-              <button
-                @click="searchTeachers"
-                class="bg-red-600 hover:bg-red-500 text-white rounded px-4 py-2"
-              >
-                この条件で絞り込み
-              </button>
-            </router-link>
           </div>
 
           <button
             v-on:click="closeModal"
-            class="bg-gray-300 hover:bg-gray-100 text-white rounded px-4 py-2"
+            class="bg-red-600 hover:bg-red-500 text-white rounded px-4 py-2"
           >
             閉じる
           </button>
@@ -215,7 +205,7 @@
     <main id="main_content" class="l-mainContent l-article bg-gray-100 p-8">
       <div class="card-container">
         <Card_student
-          v-for="card in cards"
+          v-for="card in filterCards"
           :key="card.id"
           :cardData="card"
           @click="navigateToCars(card)"
@@ -235,8 +225,9 @@ export default {
   },
   data() {
     return {
-      // showCars: false,
       cards: cardsData,
+      selectedGender: "",
+      selectedAge: "",
     };
   },
   methods: {
@@ -245,6 +236,35 @@ export default {
       this.$router.push({ name: "SelectCars", params: { id: card.id } });
       console.log("クリックされました");
       console.log(card.id);
+    },
+  },
+  computed: {
+    filterCards() {
+      let filtered = cardsData;
+
+      console.log(cardsData);
+      console.log(typeof this.selectedGender);
+      console.log(this.selectedGender);
+      const gender = this.selectedGender;
+      if (gender !== "") {
+        filtered = cardsData.filter(function (card) {
+          return card.person_sex === gender;
+        });
+      }
+
+      const ages = this.selectedAge;
+      if (ages !== "") {
+        const ageList = ages.split("-");
+        const minAge = Number(ageList[0]);
+        const maxAge = Number(ageList[1]);
+        filtered = filtered.filter(function (card) {
+          return card.person_age <= maxAge;
+        });
+        filtered = filtered.filter(function (card) {
+          return card.person_age >= minAge;
+        });
+      }
+      return filtered;
     },
   },
 };
