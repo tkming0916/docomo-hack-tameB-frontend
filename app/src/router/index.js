@@ -3,6 +3,7 @@ import { createRouter, createWebHistory } from "vue-router";
 import StudentRequest from "../pages/StudentRequest.vue";
 import ChatPage from "../pages/ChatPage.vue";
 import SelectCars from "../pages/SelectCars.vue";
+import SelectCarsFiltered from "../pages/SelectCarsFiltered.vue";
 import HomeStudent from "../pages/HomeStudent.vue";
 import HomeStudentFiltered from "../pages/HomeStudentFiltered.vue";
 import HistoryStudent from "../pages/HistoryStudent.vue";
@@ -48,6 +49,12 @@ const routes = [
     path: "/selectcars/:id",
     name: "SelectCars",
     component: SelectCars,
+    props: true,
+  },
+  {
+    path: "/filtercars/:id",
+    name: "SelectCarsFiltered",
+    component: SelectCarsFiltered,
     props: true,
   },
   // 他のルートを追加できます
