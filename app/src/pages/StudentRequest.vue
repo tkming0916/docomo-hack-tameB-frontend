@@ -9,7 +9,7 @@
 
     <input type="text" v-model="newMessage" placeholder="終了時刻" />
 
-    <button type="submit" @click="exec">依頼</button>
+    <button type="submit" @click="navigateToChat">依頼</button>
   </div>
 </template>
 
@@ -38,14 +38,21 @@ export default {
   computed: {
     // const words = this.id.split('-'),
     selectedCardCorches() {
-      return this.cards1.find((card) => card.id === 2);
+      const words = this.id.split("-");
+      const coachId = words[0];
+      console.log("coachId: ", coachId);
+      return this.cards1.find((card) => card.id === Number(coachId));
     },
     selectedCardCars() {
-      return this.cards2.find((card) => card.id === 2);
+      const words = this.id.split("-");
+      const carId = words[1];
+      console.log("carId: ", carId);
+      return this.cards2.find((card) => card.id === Number(carId));
     },
   },
   methods: {
-    exec() {
+    navigateToChat() {
+      console.log("Received coachData and cardData prop:", this.id);
       this.$router.push({ name: "ChatPage" });
     },
   },
