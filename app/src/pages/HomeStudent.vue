@@ -228,6 +228,7 @@ export default {
       cards: cardsData,
       selectedGender: "",
       selectedAge: "",
+      selectedOccupation: "",
     };
   },
   methods: {
@@ -262,6 +263,13 @@ export default {
         });
         filtered = filtered.filter(function (card) {
           return card.person_age >= minAge;
+        });
+      }
+
+      const occupation = this.selectedOccupation;
+      if (occupation !== "") {
+        filtered = filtered.filter(function (card) {
+          return card.person_work === occupation;
         });
       }
       return filtered;
