@@ -16,29 +16,29 @@
         <div id="content">
           <!-- 車種の選択 -->
           <div class="search">
-            <div class="selectedCartype">
+            <div class="selectedCarType">
               <label class="radio-label">車種:</label>
               <input
                 type="radio"
                 id="car-any"
                 value=""
-                v-model="selectedCartype"
-                name="selectedCartype"
-              /><label for="selectedCartype-any">指定しない</label>
+                v-model="selectedCarType"
+                name="selectedCarType"
+              /><label for="selectedCarType-any">指定しない</label>
               <input
                 type="radio"
                 id="small-car"
                 value="軽自動車"
-                v-model="selectedCartype"
-                name="selectedCartype"
-              /><label for="selectedCartype-car">軽自動車</label>
+                v-model="selectedCarType"
+                name="selectedCarType"
+              /><label for="selectedCarType-car">軽自動車</label>
               <input
                 type="radio"
                 id="nomal-car"
                 value="普通車"
-                v-model="selectedCartype"
-                name="selectedCartype"
-              /><label for="selectedCartype-car">普通車</label>
+                v-model="selectedCarType"
+                name="selectedCarType"
+              /><label for="selectedCarType-car">普通車</label>
             </div>
 
             <!-- 場所の選択 -->
@@ -79,25 +79,11 @@
             </div>
 
             <!-- <input v-model="search" placeholder="Search for a user"> -->
-
-            <!-- 検索ボタン -->
-            <button
-              @click="searchCars"
-              class="bg-red-600 hover:bg-red-500 text-white rounded px-4 py-2"
-            >
-              この条件で絞り込み
-            </button>
-            <!-- <button
-              @click="searchTeachers"
-              class="bg-red-600 hover:bg-red-500 text-white rounded px-4 py-2"
-            >
-              検索
-            </button> -->
           </div>
 
           <button
             v-on:click="closeModal"
-            class="bg-gray-300 hover:bg-gray-100 text-white rounded px-4 py-2"
+            class="bg-red-600 hover:bg-red-500 text-white rounded px-4 py-2"
           >
             閉じる
           </button>
@@ -128,27 +114,11 @@ export default {
     Card_car,
   },
   data() {
-    // let maxPrice = null;
-    // let filtered = cardsData;
-    // if (maxPrice !== null) {
-    //   filtered = filtered.filter((value) => value.car_cost <= maxPrice);
-    // }
-
-    // let minPrice = null;
-    // if (minPrice !== null) {
-    //   filtered = filtered.filter((value) => value.car_cost >= minPrice);
-    // }
-
-    // let carSize = null;
-    // if (carSize !== null) {
-    //   filtered = filtered.filter((value) => value.car_size === carSize);
-    // }
-    return { cards: cardsData, searchPrams: null };
+    return {
+      cards: cardsData,
+      selectedCarType: "",
+    };
   },
-
-  // setup(){
-  //   const selectedCost = ref("");
-  // },
 
   methods: {
     navigateToDetail(card) {
@@ -176,9 +146,19 @@ export default {
   },
   computed: {
     filterCards() {
-      // this.searchPrams;
-      // cardsData.filter(function (card) {});
-      return cardsData;
+      let filtered = cardsData;
+
+      console.log(cardsData);
+      console.log(typeof this.selectedCarType);
+      console.log(this.selectedCarType);
+      const carType = this.selectedCarType;
+      if (carType !== "") {
+        filtered = cardsData.filter(function (card) {
+          return card.car_size === carType;
+        });
+      }
+
+      return filtered;
     },
   },
 };
