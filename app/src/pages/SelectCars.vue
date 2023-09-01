@@ -41,6 +41,28 @@
               /><label for="selectedCartype-car">普通車</label>
             </div>
 
+            <!-- 場所の選択 -->
+            <div class="location">
+              <label>場所:</label>
+              <select
+                v-model="selectedLocation"
+                multiple
+                class="bg-gray-100 border border-gray-300"
+              >
+                <option>渋谷区</option>
+                <option>千代田区</option>
+                <option>新宿区</option>
+                <option>練馬区</option>
+                <option>目黒区</option>
+                <option>世田谷区</option>
+                <option>足立区</option>
+                <option>台東区</option>
+                <option>葛飾区</option>
+                <option>板橋区</option>
+              </select>
+            </div>
+            <br />
+
             <div class="cost">
               <label>料金:</label>
               <select
