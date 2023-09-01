@@ -141,6 +141,7 @@ export default {
         // コメントを送信した後、コメント入力欄をリセット
         this.comment = '';
       }
+      this.$router.push({ name: "HomeStudent"});
     },
     // studentから返信があった場合の返答をするスクリプト
     replyToStudent() {
